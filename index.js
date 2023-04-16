@@ -101,13 +101,13 @@ function validateColorName(colorNameOrHexCode) {
     const hexColorRegex = /^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/; // regular expression to match the string against the pattern for a hexadecimal color code
 
     if (hexColorRegex.test(colorNameOrHexCode)) {
-      console.log(`${colorNameOrHexCode} is a valid hexadecimal color code.`);
+      console.log(`is a valid hexadecimal color code.`);
       return true;
     } else if (isCssColorName(colorNameOrHexCode)) {
-      console.log(`${colorNameOrHexCode} is a valid CSS color name.`);
+      console.log(` is a valid CSS color name.`);
       return true;
     } else {
-      console.log(`${colorNameOrHexCode} is not a valid SVG color name or hexadecimal code.`);
+      console.log(` is not a valid SVG color name or hexadecimal code.`);
       return false;
     }
 }
