@@ -17,7 +17,7 @@ inquirer.prompt([
             if (input.length === 0 || input.length > 3) {
                 return 'The logo name must have at least one character in it and cannot exceed three characters. \nPlease ensure that this condition is met.';
             } else {
-                return true
+                return true;
             }
         },
     },
@@ -37,15 +37,15 @@ inquirer.prompt([
         choices: [
             {
                 name: 'Circle',
-                value: new Circle()
+                value: new Circle(),
             },
             {
                 name: 'Square',
-                value: new Square()
+                value: new Square(),
             },
             {
                 name: 'Triangle',
-                value: new Triangle()
+                value: new Triangle(),
             }
         ]
     },
@@ -59,7 +59,7 @@ inquirer.prompt([
         validate: validateColorName,
     },
 ]).then(answer => {
-    console.log(answer)
+    console.log(answer);
     
     svgMaker(answer);
 })
@@ -77,9 +77,9 @@ function svgMaker( { logoText, logoFontColor, logoShape, logoBgColor } ) {
             ${logoShape.renderLogoColor()}
 
             ${logoShape.renderLogoText(logoText, logoFontColor)}
-        </svg>`
+        </svg>`;
 
-    writeToFile('logo.svg', svgContent)
+    writeToFile('logo.svg', svgContent);
 }
 
 
@@ -90,7 +90,7 @@ function writeToFile(fileName, data) {
             console.log(error);
             return;
         } else {
-            console.log('Generated logo.svg!')
+            console.log('Generated logo.svg!');
         }
     })
 }
@@ -101,7 +101,7 @@ function validateColorName(colorNameOrHexCode) {
     const hexColorRegex = /^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/; // regular expression to match the string against the pattern for a hexadecimal color code
 
     if (hexColorRegex.test(colorNameOrHexCode)) {
-      console.log(`is a valid hexadecimal color code.`);
+      console.log(` is a valid hexadecimal color code.`);
       return true;
     } else if (isCssColorName(colorNameOrHexCode)) {
       console.log(` is a valid CSS color name.`);
