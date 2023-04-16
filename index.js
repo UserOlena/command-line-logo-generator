@@ -63,7 +63,7 @@ inquirer.prompt([
     
     svgMaker(answer);
 })
-    
+
     
 // function processes data for creating svg file
 function svgMaker( { logoText, logoFontColor, logoShape, logoBgColor } ) {
